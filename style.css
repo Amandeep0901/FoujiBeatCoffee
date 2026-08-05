@@ -834,6 +834,15 @@ main {
   animation: fadeIn 0.3s var(--ease-out);
 }
 
+/* Hidden on load — only show when class is removed */
+.loading-overlay.hidden {
+  display: none !important;
+}
+
+.success-section.hidden {
+  display: none !important;
+}
+
 .loading-spinner {
   text-align: center;
 }

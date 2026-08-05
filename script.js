@@ -8,6 +8,13 @@ document.addEventListener("DOMContentLoaded", () => {
 
     "use strict";
 
+    // Guard: hide loading overlay & success section immediately,
+    // before anything else runs, so they never flash on page load.
+    const _overlay   = document.getElementById("loadingOverlay");
+    const _success   = document.getElementById("successSection");
+    if (_overlay) _overlay.classList.add("hidden");
+    if (_success) _success.classList.add("hidden");
+
     /* ── CONFIG ── */
     const CONFIG = {
         appsScriptUrl:      "https://script.google.com/macros/s/AKfycbxDemQKaqUnDlXnr0VEt2pW98wg9CNnjIF7jueLFdtLRTSeeJayppUOQFVJOaYHk4EM/exec",
