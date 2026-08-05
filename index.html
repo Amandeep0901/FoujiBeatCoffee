@@ -7,11 +7,11 @@
     <meta name="theme-color" content="#3B1F14">
     <meta name="robots" content="index, follow">
     <title>Fouji Beat Coffee | Share Your Feedback</title>
-    
+
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    
+
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -22,10 +22,10 @@
 
 <header class="hero" role="banner">
     <div class="hero-bg"></div>
-    
+
     <div class="container hero-container">
         <!-- Brand Identity -->
-        <div class="hero-brand" data-aos="fade-up">
+        <div class="hero-brand">
             <div class="brand-logo">
                 <svg class="coffee-cup-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 40 40" aria-hidden="true">
                     <path d="M8 6h24v20c0 4.4-3.6 8-8 8h-8c-4.4 0-8-3.6-8-8V6z" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
@@ -38,13 +38,13 @@
         </div>
 
         <!-- Welcome Message -->
-        <div class="hero-message" data-aos="fade-up" data-aos-delay="100">
+        <div class="hero-message">
             <p class="hero-message-main">Thank you for choosing Fouji Beat Coffee.</p>
             <p class="hero-message-sub">Your feedback helps us brew the perfect cup, every time.</p>
         </div>
 
         <!-- Trust Signal -->
-        <div class="trust-signal" data-aos="fade-up" data-aos-delay="200">
+        <div class="trust-signal">
             <svg class="trust-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
                 <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8-3.58 8-8 8zm3.5-9c.83 0 1.5-.67 1.5-1.5S16.33 8 15.5 8 14 8.67 14 9.5s.67 1.5 1.5 1.5zm-7 0c.83 0 1.5-.67 1.5-1.5S9.33 8 8.5 8 7 8.67 7 9.5 7.67 11 8.5 11zm3.5 6.5c2.33 0 4.31-1.46 5.11-3.5H6.89c.8 2.04 2.78 3.5 5.11 3.5z"/>
             </svg>
@@ -64,20 +64,20 @@
         <div class="content-grid">
 
             <!-- Product Image Column -->
-            <div class="product-column" data-aos="fade-right">
+            <div class="product-column">
                 <div class="product-showcase">
-                    <img src="https://via.placeholder.com/280x380?text=Fouji+Beat+Coffee" 
-                         alt="Fouji Beat Coffee product bottle" 
-                         class="product-image" 
+                    <img src="https://via.placeholder.com/280x380?text=Fouji+Beat+Coffee"
+                         alt="Fouji Beat Coffee product bottle"
+                         class="product-image"
                          loading="lazy">
                     <div class="product-shine"></div>
                 </div>
             </div>
 
             <!-- Feedback Form Column -->
-            <div class="form-column" data-aos="fade-left">
+            <div class="form-column">
                 <div class="feedback-section" id="feedbackSection">
-                    
+
                     <!-- Form Header -->
                     <div class="form-header">
                         <h2 class="form-title">Share Your Experience</h2>
@@ -90,11 +90,11 @@
                         <!-- Name Field -->
                         <div class="form-group">
                             <label for="name" class="form-label">Your Name</label>
-                            <input 
-                                type="text" 
-                                id="name" 
-                                name="name" 
-                                class="form-input" 
+                            <input
+                                type="text"
+                                id="name"
+                                name="name"
+                                class="form-input"
                                 placeholder="e.g. Priya Sharma"
                                 autocomplete="name"
                                 required
@@ -105,14 +105,15 @@
                         <!-- Phone Field -->
                         <div class="form-group">
                             <label for="phone" class="form-label">Phone Number</label>
-                            <input 
-                                type="tel" 
-                                id="phone" 
-                                name="phone" 
-                                class="form-input" 
+                            <input
+                                type="tel"
+                                id="phone"
+                                name="phone"
+                                class="form-input"
                                 placeholder="98967 xxxxx"
                                 autocomplete="tel"
                                 inputmode="numeric"
+                                pattern="[0-9]*"
                                 required
                                 minlength="10">
                             <span class="form-error" id="errorPhone" aria-live="polite"></span>
@@ -121,11 +122,11 @@
                         <!-- Email Field (Optional) -->
                         <div class="form-group">
                             <label for="email" class="form-label">Email <span class="optional-text">(optional)</span></label>
-                            <input 
-                                type="email" 
-                                id="email" 
-                                name="email" 
-                                class="form-input" 
+                            <input
+                                type="email"
+                                id="email"
+                                name="email"
+                                class="form-input"
                                 placeholder="you@example.com"
                                 autocomplete="email">
                         </div>
@@ -224,10 +225,10 @@
                         <!-- Feedback Text -->
                         <div class="form-group form-group--last">
                             <label for="feedback" class="form-label">Tell us more <span class="optional-text">(optional)</span></label>
-                            <textarea 
-                                id="feedback" 
-                                name="feedback" 
-                                class="form-textarea" 
+                            <textarea
+                                id="feedback"
+                                name="feedback"
+                                class="form-textarea"
                                 placeholder="What did you love? What could we improve?"
                                 maxlength="500"
                                 rows="4"></textarea>
@@ -248,7 +249,7 @@
                 </div>
 
                 <!-- Success Message -->
-                <div class="success-section" id="successSection" hidden aria-live="polite" aria-label="Thank you for your feedback">
+                <div class="success-section hidden" id="successSection" aria-live="polite" aria-label="Thank you for your feedback">
                     <div class="success-animation">
                         <div class="success-checkmark">
                             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 52 52" aria-hidden="true">
@@ -257,7 +258,7 @@
                             </svg>
                         </div>
                     </div>
-                    
+
                     <h2 class="success-title">Thank You!</h2>
                     <p class="success-message">Your feedback has been received and shared with our team.</p>
                     <p class="success-subtitle">We read every response and your words help us improve.</p>
@@ -294,7 +295,7 @@
      LOADING OVERLAY
      ═══════════════════════════════════════════════════ -->
 
-<div class="loading-overlay" id="loadingOverlay" aria-hidden="true">
+<div class="loading-overlay hidden" id="loadingOverlay" aria-hidden="true">
     <div class="loading-spinner">
         <div class="spinner"></div>
         <p class="loading-text">Sending your feedback...</p>

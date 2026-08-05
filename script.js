@@ -29,6 +29,8 @@ document.addEventListener("DOMContentLoaded", () => {
     const charCount       = document.getElementById("charCount");
     const productHidden   = document.getElementById("product");
     const productError    = document.getElementById("productError");
+    const anotherBtn      = document.getElementById("anotherBtn");
+    const phoneInput      = document.getElementById("phone");
 
     /* ── STATE ── */
     const state = {
@@ -46,8 +48,13 @@ document.addEventListener("DOMContentLoaded", () => {
         initCharCounter();
         initRatings();
         initRecommend();
+        initPhoneFilter();
         initFormSubmit();
+        initAnotherBtn();
         loadReviewsTicker();
+
+        // Defensive: ensure overlay is hidden on load even if HTML attr was lost
+        loadingOverlay.classList.add("hidden");
     }
 
     /* ── LINKS ── */
@@ -86,10 +93,8 @@ document.addEventListener("DOMContentLoaded", () => {
                     pill.classList.remove("selected");
                 }
 
-                // Update hidden input with comma-joined values
                 productHidden.value = state.selectedProducts.join(", ");
 
-                // Hide error if at least one selected
                 if (state.selectedProducts.length > 0) {
                     productError.classList.add("hidden");
                 }
@@ -103,6 +108,18 @@ document.addEventListener("DOMContentLoaded", () => {
             const len = feedbackInput.value.length;
             charCount.textContent = len + " / 500";
             charCount.style.color = len >= 450 ? "#C4622D" : "#888";
+        });
+    }
+
+    /* ── PHONE DIGITS-ONLY FILTER ── */
+    function initPhoneFilter() {
+        if (!phoneInput) return;
+        phoneInput.addEventListener("input", () => {
+            // Strip everything except 0-9, keep cursor position
+            const cleaned = phoneInput.value.replace(/\D/g, "");
+            if (cleaned !== phoneInput.value) {
+                phoneInput.value = cleaned;
+            }
         });
     }
 
@@ -161,7 +178,7 @@ document.addEventListener("DOMContentLoaded", () => {
             if (!validate()) return;
 
             submitBtn.disabled = true;
-            submitBtn.textContent = "Submitting...";
+            submitBtn.querySelector(".btn-text").textContent = "Submitting...";
             loadingOverlay.classList.remove("hidden");
 
             const ua = navigator.userAgent;
@@ -198,7 +215,7 @@ document.addEventListener("DOMContentLoaded", () => {
             await delay(1000);
             loadingOverlay.classList.add("hidden");
             submitBtn.disabled = false;
-            submitBtn.textContent = "❤️ Submit Feedback";
+            submitBtn.querySelector(".btn-text").textContent = "❤️ Submit Feedback";
             showSuccess();
         });
     }
@@ -234,24 +251,59 @@ document.addEventListener("DOMContentLoaded", () => {
        SUCCESS SCREEN
     ════════════════════════════════════════════ */
     function showSuccess() {
-        feedbackSection.style.display = "none";
+        feedbackSection.classList.add("hidden");
         successSection.classList.remove("hidden");
-        successSection.style.display = "block";
         setTimeout(() => {
             successSection.scrollIntoView({ behavior: "smooth", block: "start" });
         }, 80);
-        // Re-populate success ticker with latest reviews
         loadReviewsTicker();
     }
 
     /* ════════════════════════════════════════════
+       ANOTHER FEEDBACK — reset everything
+    ════════════════════════════════════════════ */
+    function initAnotherBtn() {
+        if (!anotherBtn) return;
+        anotherBtn.addEventListener("click", () => {
+            // Reset form fields
+            form.reset();
+
+            // Reset state
+            state.selectedProducts = [];
+            state.recommend = "";
+            state.ratings = { overall: 0, taste: 0, packaging: 0, value: 0 };
+
+            // Reset pills
+            document.querySelectorAll(".product-pill").forEach(p => p.classList.remove("selected"));
+            productHidden.value = "";
+            productError.classList.add("hidden");
+
+            // Reset ratings
+            document.querySelectorAll(".overall-stars .star, .taste-stars .star, .packaging-stars .star, .value-stars .star")
+                .forEach(s => s.classList.remove("active"));
+            const ratingText = document.querySelector(".rating-text");
+            if (ratingText) ratingText.textContent = "Select a rating";
+
+            // Reset recommend
+            document.querySelectorAll(".recommend-btn").forEach(b => b.classList.remove("active"));
+
+            // Reset char counter
+            charCount.textContent = "0 / 500";
+            charCount.style.color = "#888";
+
+            // Toggle sections
+            successSection.classList.add("hidden");
+            feedbackSection.classList.remove("hidden");
+
+            // Scroll back to form
+            window.scrollTo({ top: 0, behavior: "smooth" });
+        });
+    }
+
+    /* ════════════════════════════════════════════
        REVIEWS TICKER
-       Seeds show instantly from HTML.
-       Live data fetched silently in background
-       and replaces seeds when ready.
     ════════════════════════════════════════════ */
     async function loadReviewsTicker() {
-        // Seeds already visible in HTML — fetch live data silently
         try {
             const res  = await fetch(CONFIG.appsScriptUrl + "?action=reviews");
             const data = await res.json();
@@ -259,7 +311,6 @@ document.addEventListener("DOMContentLoaded", () => {
                 renderTickers(data.reviews);
             }
         } catch (err) {
-            // Seeds stay visible — no error shown to user
             console.warn("Ticker background fetch:", err);
         }
     }
@@ -285,7 +336,6 @@ document.addEventListener("DOMContentLoaded", () => {
         const full  = Math.round(avg);
         const stars = "★".repeat(full) + "☆".repeat(5 - full);
 
-        // Ticker header
         const avgStars = document.getElementById("avgStars");
         const avgScore = document.getElementById("avgScore");
         const avgCount = document.getElementById("avgCount");
@@ -293,7 +343,6 @@ document.addEventListener("DOMContentLoaded", () => {
         if (avgScore) avgScore.textContent = score + "/5";
         if (avgCount) avgCount.textContent = "(" + reviews.length + " review" + (reviews.length !== 1 ? "s" : "") + ")";
 
-        // Trust card — dynamic
         const trust = document.getElementById("trustAvgScore");
         if (trust) trust.textContent = score + " / 5";
     }
