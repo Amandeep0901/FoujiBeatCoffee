@@ -1206,6 +1206,99 @@ input[readonly] {
   .syrup-banner { min-height: 480px; padding: 64px 0; }
 }
 
+
+/* ═══════════════════════════════
+   BRAND SHOWCASE
+═══════════════════════════════ */
+.brand-showcase {
+  position: relative;
+  min-height: 320px;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+}
+
+.brand-showcase-bg {
+  position: absolute;
+  inset: 0;
+  background-size: cover;
+  background-position: center top;
+  background-repeat: no-repeat;
+}
+
+.brand-showcase-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to bottom,
+    rgba(10,4,0,0.65) 0%,
+    rgba(10,4,0,0.80) 100%
+  );
+}
+
+.brand-showcase-content {
+  position: relative;
+  z-index: 2;
+  text-align: center;
+  padding: 52px 18px;
+}
+
+.brand-showcase-tag {
+  display: inline-block;
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--gold);
+  border: 1px solid rgba(200,155,60,0.4);
+  padding: 4px 14px;
+  border-radius: 999px;
+  margin-bottom: 14px;
+}
+
+.brand-showcase-title {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(1.8rem, 6vw, 3rem);
+  color: #fff;
+  line-height: 1.15;
+  margin-bottom: 12px;
+}
+
+.brand-showcase-desc {
+  font-size: 0.92rem;
+  color: rgba(255,255,255,0.70);
+  margin-bottom: 24px;
+}
+
+@media (min-width: 600px) {
+  .brand-showcase { min-height: 380px; }
+}
+
+/* Syrup product image inside banner */
+.syrup-banner-product {
+  flex-shrink: 0;
+  width: 200px;
+  z-index: 2;
+  position: relative;
+  display: none; /* hidden on mobile, shown on wider screens */
+}
+
+.syrup-product-img {
+  width: 100%;
+  object-fit: contain;
+  filter: drop-shadow(0 20px 40px rgba(0,0,0,0.5));
+  animation: float 4s ease-in-out infinite;
+}
+
+@media (min-width: 640px) {
+  .syrup-banner-product { display: block; }
+  .syrup-banner-inner   { gap: 32px; }
+}
+
+@media (min-width: 900px) {
+  .syrup-banner-product { width: 280px; }
+}
+
 /* ── FOOTER ────────────────────────────────────────── */
 footer {
   background: var(--coffee-dark);
