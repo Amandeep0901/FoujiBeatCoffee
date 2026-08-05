@@ -284,14 +284,18 @@ document.addEventListener("DOMContentLoaded", () => {
         const score = avg.toFixed(1);
         const full  = Math.round(avg);
         const stars = "★".repeat(full) + "☆".repeat(5 - full);
-        const el    = {
-            stars: document.getElementById("avgStars"),
-            score: document.getElementById("avgScore"),
-            count: document.getElementById("avgCount"),
-        };
-        if (el.stars) el.stars.textContent = stars;
-        if (el.score) el.score.textContent = score + "/5";
-        if (el.count) el.count.textContent = "(" + reviews.length + " review" + (reviews.length !== 1 ? "s" : "") + ")";
+
+        // Ticker header
+        const avgStars = document.getElementById("avgStars");
+        const avgScore = document.getElementById("avgScore");
+        const avgCount = document.getElementById("avgCount");
+        if (avgStars) avgStars.textContent = stars;
+        if (avgScore) avgScore.textContent = score + "/5";
+        if (avgCount) avgCount.textContent = "(" + reviews.length + " review" + (reviews.length !== 1 ? "s" : "") + ")";
+
+        // Trust card — dynamic
+        const trust = document.getElementById("trustAvgScore");
+        if (trust) trust.textContent = score + " / 5";
     }
 
     function populateSuccessTicker(cards, duration) {
