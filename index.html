@@ -1,328 +1,619 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-    <meta name="description" content="Thank you for choosing Fouji Beat Coffee. Your feedback helps us brew the perfect cup, every time.">
-    <meta name="theme-color" content="#3B1F14">
-    <meta name="robots" content="index, follow">
+    <meta charset="UTF-8" />
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+
     <title>Fouji Beat Coffee | Share Your Feedback</title>
 
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <meta name="description"
+          content="Tried Fouji Beat Coffee or our syrups? Tell us how it went — takes less than a minute." />
 
-    <link rel="stylesheet" href="style.css">
+    <meta name="theme-color"
+          content="#1C1712" />
+
+    <link rel="preconnect"
+          href="https://fonts.googleapis.com" />
+
+    <link rel="preconnect"
+          href="https://fonts.gstatic.com"
+          crossorigin />
+
+    <link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@500;600;700;800&family=Work+Sans:wght@400;500;600;700&display=swap"
+          rel="stylesheet" />
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" />
+
+    <link rel="stylesheet"
+          href="style.css" />
 </head>
+
 <body>
 
-<!-- ═══════════════════════════════════════════════════
-     HEADER / HERO
-     ═══════════════════════════════════════════════════ -->
+    <!-- ═══════════════════════════════════════════════
+         HERO
+    ═══════════════════════════════════════════════ -->
 
-<header class="hero" role="banner">
-    <div class="hero-bg"></div>
+    <header class="hero">
 
-    <div class="container hero-container">
-        <!-- Brand Identity -->
-        <div class="hero-brand">
-            <div class="brand-logo">
-                <svg class="coffee-cup-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 40 40" aria-hidden="true">
-                    <path d="M8 6h24v20c0 4.4-3.6 8-8 8h-8c-4.4 0-8-3.6-8-8V6z" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-                    <path d="M32 12c2.2 0 4 1.8 4 4v6c0 1.1-.9 2-2 2s-2-.9-2-2v-6c0-.6.4-1 1-1z" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
-                    <path d="M12 2v6M20 2v6M28 2v6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+        <div class="hero-photo"
+             role="img"
+             aria-label="Fouji Beat Coffee tub, cold coffee and fresh coffee beans on a wooden counter"></div>
+
+        <div class="hero-scrim"></div>
+
+        <div class="hero-content">
+
+            <img src="assets/logo-light.png"
+                 alt="Fouji Beat Coffee — Try It You Will Like It"
+                 class="hero-logo" />
+
+            <a href="#feedback"
+               class="btn btn-cta hero-cta">
+
+                Share Your Feedback
+
+                <svg width="18"
+                     height="18"
+                     viewBox="0 0 18 18"
+                     fill="none"
+                     aria-hidden="true">
+
+                    <path d="M9 3v12M3.5 9 9 14.5 14.5 9"
+                          stroke="currentColor"
+                          stroke-width="1.8"
+                          stroke-linecap="round"
+                          stroke-linejoin="round" />
+
                 </svg>
-            </div>
-            <h1 class="brand-name">Fouji Beat Coffee</h1>
-            <p class="brand-tagline">Your Feedback, Our Passion</p>
+
+            </a>
+
         </div>
 
-        <!-- Welcome Message -->
-        <div class="hero-message">
-            <p class="hero-message-main">Thank you for choosing Fouji Beat Coffee.</p>
-            <p class="hero-message-sub">Your feedback helps us brew the perfect cup, every time.</p>
-        </div>
+    </header>
 
-        <!-- Trust Signal -->
-        <div class="trust-signal">
-            <svg class="trust-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
-                <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8-3.58 8-8 8zm3.5-9c.83 0 1.5-.67 1.5-1.5S16.33 8 15.5 8 14 8.67 14 9.5s.67 1.5 1.5 1.5zm-7 0c.83 0 1.5-.67 1.5-1.5S9.33 8 8.5 8 7 8.67 7 9.5 7.67 11 8.5 11zm3.5 6.5c2.33 0 4.31-1.46 5.11-3.5H6.89c.8 2.04 2.78 3.5 5.11 3.5z"/>
-            </svg>
-            <span class="trust-text">This feedback goes straight to our roasting team.</span>
-        </div>
+    <!-- Whisk-swirl divider -->
+    <div class="whisk-divider"
+         aria-hidden="true">
+
+        <svg viewBox="0 0 400 60"
+             preserveAspectRatio="none"
+             xmlns="http://www.w3.org/2000/svg">
+
+            <path class="whisk-path"
+                  d="M0 30 C 40 5, 80 55, 120 30 S 200 5, 240 30 S 320 55, 360 30 S 400 15, 400 30" />
+
+        </svg>
+
     </div>
-</header>
 
-<!-- ═══════════════════════════════════════════════════
-     MAIN CONTENT
-     ═══════════════════════════════════════════════════ -->
+    <main>
 
-<main>
-    <div class="container main-container">
+         <!-- ═══════════════════════════════════════════════
+         FEEDBACK FORM
+    ═══════════════════════════════════════════════ -->
 
-        <!-- Product & Form Grid -->
-        <div class="content-grid">
+    <section class="feedback-wrap" id="feedback">
 
-            <!-- Product Image Column -->
-            <div class="product-column">
-                <div class="product-showcase">
-                    <img src="https://via.placeholder.com/280x380?text=Fouji+Beat+Coffee"
-                         alt="Fouji Beat Coffee product bottle"
-                         class="product-image"
-                         loading="lazy">
-                    <div class="product-shine"></div>
+        <div class="feedback-card" id="feedbackCard">
+
+            <p class="eyebrow">
+                Since 2000 · Ambala
+            </p>
+
+            <h1 class="feedback-title">
+                How Was Your Cup?
+            </h1>
+
+            <p class="feedback-sub">
+                Two minutes of your time helps us brew it better.
+                Your answers go straight to our team —
+                not shared anywhere else.
+            </p>
+
+            <!-- =====================================
+                 Rating Summary (NEW)
+            ====================================== -->
+
+            <div class="rating-summary">
+
+                <div class="rating-stars">
+                    ★★★★★
                 </div>
+
+                <div class="rating-score">
+
+                    <span id="averageRating">4.9</span>
+
+                    <span class="rating-divider">/</span>
+
+                    <span class="rating-outof">5</span>
+
+                </div>
+
+                <div class="rating-count">
+
+                    Based on
+
+                    <strong id="totalReviews">
+                        1,284
+                    </strong>
+
+                    Verified Reviews
+
+                </div>
+
             </div>
 
-            <!-- Feedback Form Column -->
-            <div class="form-column">
-                <div class="feedback-section" id="feedbackSection">
+            <!-- =====================================
+                 Feedback Form
+            ====================================== -->
 
-                    <!-- Form Header -->
-                    <div class="form-header">
-                        <h2 class="form-title">Share Your Experience</h2>
-                        <p class="form-subtitle">Takes about 2 minutes. No signup needed.</p>
-                    </div>
+            <form id="feedbackForm" novalidate>
 
-                    <!-- Feedback Form -->
-                    <form id="feedbackForm" class="feedback-form" novalidate>
+                <div class="field">
 
-                        <!-- Name Field -->
-                        <div class="form-group">
-                            <label for="name" class="form-label">Your Name</label>
-                            <input
-                                type="text"
-                                id="name"
-                                name="name"
-                                class="form-input"
-                                placeholder="e.g. Priya Sharma"
-                                autocomplete="name"
-                                required
-                                minlength="2">
-                            <span class="form-error" id="errorName" aria-live="polite"></span>
-                        </div>
+                    <label for="name">
+                        Your name
+                    </label>
 
-                        <!-- Phone Field -->
-                        <div class="form-group">
-                            <label for="phone" class="form-label">Phone Number</label>
-                            <input
-                                type="tel"
-                                id="phone"
-                                name="phone"
-                                class="form-input"
-                                placeholder="98967 xxxxx"
-                                autocomplete="tel"
-                                inputmode="numeric"
-                                pattern="[0-9]*"
-                                required
-                                minlength="10">
-                            <span class="form-error" id="errorPhone" aria-live="polite"></span>
-                        </div>
+                    <input type="text"
+                           id="name"
+                           name="name"
+                           placeholder="e.g. Priya Sharma"
+                           autocomplete="name"
+                           required
+                           minlength="2" />
 
-                        <!-- Email Field (Optional) -->
-                        <div class="form-group">
-                            <label for="email" class="form-label">Email <span class="optional-text">(optional)</span></label>
-                            <input
-                                type="email"
-                                id="email"
-                                name="email"
-                                class="form-input"
-                                placeholder="you@example.com"
-                                autocomplete="email">
-                        </div>
+                    <span class="field-error"
+                          id="errName"></span>
 
-                        <!-- Product Selection -->
-                        <div class="form-group">
-                            <label class="form-label">Which product did you try?</label>
-                            <div class="product-pills" id="productPills" role="radiogroup" aria-label="Select product">
-                                <button type="button" class="product-pill" data-value="Classic Roast" aria-label="Classic Roast">Classic Roast</button>
-                                <button type="button" class="product-pill" data-value="Cold Brew" aria-label="Cold Brew">Cold Brew</button>
-                                <button type="button" class="product-pill" data-value="Filter Coffee" aria-label="Filter Coffee">Filter Coffee</button>
-                                <button type="button" class="product-pill" data-value="Instant Coffee" aria-label="Instant Coffee">Instant</button>
-                                <button type="button" class="product-pill" data-value="Shikanji Syrup" aria-label="Shikanji Syrup">Shikanji</button>
-                            </div>
-                            <input type="hidden" id="product" name="product">
-                            <span class="form-error" id="productError" aria-live="polite"></span>
-                        </div>
+                </div>
 
-                        <!-- Overall Rating -->
-                        <div class="form-group">
-                            <label class="form-label">Rate your experience</label>
-                            <div class="stars-wrapper" role="radiogroup" aria-label="Rate your overall experience">
-                                <div class="overall-stars">
-                                    <button type="button" class="star" data-value="1" aria-label="1 star - Poor" tabindex="0"></button>
-                                    <button type="button" class="star" data-value="2" aria-label="2 stars - Fair" tabindex="-1"></button>
-                                    <button type="button" class="star" data-value="3" aria-label="3 stars - Good" tabindex="-1"></button>
-                                    <button type="button" class="star" data-value="4" aria-label="4 stars - Very Good" tabindex="-1"></button>
-                                    <button type="button" class="star" data-value="5" aria-label="5 stars - Excellent" tabindex="-1"></button>
-                                </div>
-                                <span class="rating-text">Select a rating</span>
-                            </div>
-                            <span class="form-error" id="ratingError" aria-live="polite"></span>
-                        </div>
+                <div class="field">
 
-                        <!-- Taste Rating -->
-                        <div class="form-group">
-                            <label class="form-label form-label--secondary">Taste & Flavor</label>
-                            <div class="stars-wrapper stars-wrapper--compact" role="radiogroup" aria-label="Rate the taste and flavor">
-                                <div class="taste-stars">
-                                    <button type="button" class="star star--small" data-value="1" aria-label="1 star" tabindex="0"></button>
-                                    <button type="button" class="star star--small" data-value="2" aria-label="2 stars" tabindex="-1"></button>
-                                    <button type="button" class="star star--small" data-value="3" aria-label="3 stars" tabindex="-1"></button>
-                                    <button type="button" class="star star--small" data-value="4" aria-label="4 stars" tabindex="-1"></button>
-                                    <button type="button" class="star star--small" data-value="5" aria-label="5 stars" tabindex="-1"></button>
-                                </div>
-                            </div>
-                        </div>
+                    <label for="phone">
+                        Phone number
+                    </label>
 
-                        <!-- Packaging Rating -->
-                        <div class="form-group">
-                            <label class="form-label form-label--secondary">Packaging & Presentation</label>
-                            <div class="stars-wrapper stars-wrapper--compact" role="radiogroup" aria-label="Rate the packaging">
-                                <div class="packaging-stars">
-                                    <button type="button" class="star star--small" data-value="1" aria-label="1 star" tabindex="0"></button>
-                                    <button type="button" class="star star--small" data-value="2" aria-label="2 stars" tabindex="-1"></button>
-                                    <button type="button" class="star star--small" data-value="3" aria-label="3 stars" tabindex="-1"></button>
-                                    <button type="button" class="star star--small" data-value="4" aria-label="4 stars" tabindex="-1"></button>
-                                    <button type="button" class="star star--small" data-value="5" aria-label="5 stars" tabindex="-1"></button>
-                                </div>
-                            </div>
-                        </div>
+                    <input type="tel"
+                           id="phone"
+                           name="phone"
+                           placeholder="98967 xxxxx"
+                           autocomplete="tel"
+                           inputmode="numeric"
+                           required
+                           minlength="10" />
 
-                        <!-- Value Rating -->
-                        <div class="form-group">
-                            <label class="form-label form-label--secondary">Value for Money</label>
-                            <div class="stars-wrapper stars-wrapper--compact" role="radiogroup" aria-label="Rate the value">
-                                <div class="value-stars">
-                                    <button type="button" class="star star--small" data-value="1" aria-label="1 star" tabindex="0"></button>
-                                    <button type="button" class="star star--small" data-value="2" aria-label="2 stars" tabindex="-1"></button>
-                                    <button type="button" class="star star--small" data-value="3" aria-label="3 stars" tabindex="-1"></button>
-                                    <button type="button" class="star star--small" data-value="4" aria-label="4 stars" tabindex="-1"></button>
-                                    <button type="button" class="star star--small" data-value="5" aria-label="5 stars" tabindex="-1"></button>
-                                </div>
-                            </div>
-                        </div>
+                    <span class="field-error"
+                          id="errPhone"></span>
 
-                        <!-- Recommend Question -->
-                        <div class="form-group">
-                            <label class="form-label">Would you recommend Fouji Beat Coffee?</label>
-                            <div class="recommend-group" role="radiogroup" aria-label="Would you recommend this product">
-                                <button type="button" class="recommend-btn" data-value="yes" aria-label="Yes, I would recommend">
-                                    <span class="emoji">👍</span>
-                                    <span>Yes!</span>
-                                </button>
-                                <button type="button" class="recommend-btn" data-value="maybe" aria-label="Maybe, I might recommend">
-                                    <span class="emoji">🤔</span>
-                                    <span>Maybe</span>
-                                </button>
-                                <button type="button" class="recommend-btn" data-value="no" aria-label="No, I would not recommend">
-                                    <span class="emoji">😶</span>
-                                    <span>No</span>
-                                </button>
-                            </div>
-                        </div>
+                </div>
 
-                        <!-- Feedback Text -->
-                        <div class="form-group form-group--last">
-                            <label for="feedback" class="form-label">Tell us more <span class="optional-text">(optional)</span></label>
-                            <textarea
-                                id="feedback"
-                                name="feedback"
-                                class="form-textarea"
-                                placeholder="What did you love? What could we improve?"
-                                maxlength="500"
-                                rows="4"></textarea>
-                            <div class="char-counter">
-                                <span id="charCount">0</span> / 500
-                            </div>
-                        </div>
+                <div class="field">
 
-                        <!-- Submit Button -->
-                        <button type="submit" id="submitBtn" class="submit-btn" aria-label="Submit your feedback">
-                            <span class="btn-text">Share Your Feedback</span>
-                            <span class="btn-spinner" aria-hidden="true"></span>
+                    <label>
+                        Which product(s) did you try?
+                    </label>
+
+                    <div class="pill-grid"
+                         id="productPills"
+                         role="group"
+                         aria-label="Select the products you tried">
+
+                        <button type="button"
+                                class="pill"
+                                data-value="Beat Coffee"
+                                style="--dot:#1C1712">
+
+                            <span class="pill-dot"></span>
+
+                            Beat Coffee
+
                         </button>
 
-                        <p class="form-disclaimer">Your data is secure. It goes directly to our team — not shared publicly.</p>
-                    </form>
+                        <button type="button"
+                                class="pill"
+                                data-value="Jaljeera Syrup"
+                                style="--dot:#0E7A6E">
+
+                            <span class="pill-dot"></span>
+
+                            Jaljeera
+
+                        </button>
+
+                        <button type="button"
+                                class="pill"
+                                data-value="Shikanji Syrup"
+                                style="--dot:#F0C300">
+
+                            <span class="pill-dot"></span>
+
+                            Shikanji
+
+                        </button>
+
+                        <button type="button"
+                                class="pill"
+                                data-value="Mango Syrup"
+                                style="--dot:#F0A000">
+
+                            <span class="pill-dot"></span>
+
+                            Mango
+
+                        </button>
+
+                        <button type="button"
+                                class="pill"
+                                data-value="Rose Syrup"
+                                style="--dot:#C81E3A">
+
+                            <span class="pill-dot"></span>
+
+                            Rose
+
+                        </button>
+
+                        <button type="button"
+                                class="pill"
+                                data-value="Strawberry Syrup"
+                                style="--dot:#E00000">
+
+                            <span class="pill-dot"></span>
+
+                            Strawberry
+
+                        </button>
+
+                    </div>
+
+                    <input type="hidden"
+                           id="product"
+                           name="product"
+                           required />
+
+                    <span class="field-error"
+                          id="errProduct"></span>
 
                 </div>
 
-                <!-- Success Message -->
-                <div class="success-section hidden" id="successSection" aria-live="polite" aria-label="Thank you for your feedback">
-                    <div class="success-animation">
-                        <div class="success-checkmark">
-                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 52 52" aria-hidden="true">
-                                <circle class="checkmark-circle" cx="26" cy="26" r="25"></circle>
-                                <path class="checkmark-check" d="M14.1 27.2l7.1 7.2 16.7-16.8"></path>
-                            </svg>
-                        </div>
+                <div class="field">
+
+                    <label>
+                        Rate your experience
+                    </label>
+
+                    <div class="stars"
+                         id="starRating"
+                         role="radiogroup"
+                         aria-label="Rate your overall experience out of 5">
+
+                        <button type="button"
+                                class="star"
+                                data-value="1"
+                                aria-label="1 star"
+                                tabindex="0">
+                            ★
+                        </button>
+
+                        <button type="button"
+                                class="star"
+                                data-value="2"
+                                aria-label="2 stars"
+                                tabindex="-1">
+                            ★
+                        </button>
+
+                        <button type="button"
+                                class="star"
+                                data-value="3"
+                                aria-label="3 stars"
+                                tabindex="-1">
+                            ★
+                        </button>
+
+                        <button type="button"
+                                class="star"
+                                data-value="4"
+                                aria-label="4 stars"
+                                tabindex="-1">
+                            ★
+                        </button>
+
+                        <button type="button"
+                                class="star"
+                                data-value="5"
+                                aria-label="5 stars"
+                                tabindex="-1">
+                            ★
+                        </button>
+
+                        <span class="star-label"
+                              id="starLabel">
+                            Tap to rate
+                        </span>
+
                     </div>
 
-                    <h2 class="success-title">Thank You!</h2>
-                    <p class="success-message">Your feedback has been received and shared with our team.</p>
-                    <p class="success-subtitle">We read every response and your words help us improve.</p>
+                    <input type="hidden"
+                           id="rating"
+                           name="rating"
+                           required />
 
-                    <div class="success-actions">
-                        <button type="button" id="anotherBtn" class="btn-another">Share Another Feedback</button>
-                    </div>
+                    <span class="field-error"
+                          id="errRating"></span>
 
-                    <div class="social-cta">
-                        <p class="social-cta-text">Stay connected:</p>
-                        <div class="social-links">
-                            <a href="#" id="instagramBtn" class="social-link" aria-label="Follow on Instagram">
-                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
-                                    <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 1 0 0 12.324 6.162 6.162 0 0 0 0-12.324zM12 16a4 4 0 1 1 0-8 4 4 0 0 1 0 8zm6.406-11.845a1.44 1.44 0 1 0 0 2.881 1.44 1.44 0 0 0 0-2.881z"/>
-                                </svg>
-                                Instagram
-                            </a>
-                            <a href="#" id="whatsappBtn" class="social-link" aria-label="Chat on WhatsApp">
-                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
-                                    <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413z"/>
-                                </svg>
-                                WhatsApp
-                            </a>
-                        </div>
-                    </div>
                 </div>
-            </div>
+
+                <div class="field">
+
+                    <label for="comment">
+                        Tell us more
+                        <span class="optional">(optional)</span>
+                    </label>
+
+                    <textarea id="comment"
+                              name="comment"
+                              rows="4"
+                              maxlength="500"
+                              placeholder="Too sweet, just right, needs more kick — we're listening."></textarea>
+
+                    <div class="char-count">
+                        <span id="charCount">0</span>/500
+                    </div>
+
+                </div>
+
+                <button type="submit"
+                        class="btn btn-submit"
+                        id="submitBtn">
+
+                    <span class="btn-label">
+                        Send Feedback
+                    </span>
+
+                    <span class="btn-spinner"
+                          aria-hidden="true"></span>
+
+                </button>
+
+                <p class="disclaimer">
+                    No account needed.
+                    Your number is never shown publicly.
+                </p>
+
+            </form>
 
         </div>
+
+        <!-- ==========================================
+                    SUCCESS CARD
+        =========================================== -->
+
+        <div class="feedback-card success-card"
+             id="successCard"
+             hidden>
+
+            <div class="checkmark">
+
+                <svg viewBox="0 0 52 52"
+                     aria-hidden="true">
+
+                    <circle class="check-circle"
+                            cx="26"
+                            cy="26"
+                            r="24" />
+
+                    <path class="check-path"
+                          d="M14 27l7 7 17-17" />
+
+                </svg>
+
+            </div>
+
+            <p class="eyebrow">
+                Feedback logged
+            </p>
+
+            <h2 class="feedback-title">
+                Thank You<span id="thanksName"></span>!
+            </h2>
+
+            <p class="feedback-sub">
+                Your feedback goes straight to our roasting team.
+                We read every single response.
+            </p>
+
+            <div class="social-row">
+
+                <a href="#"
+                   id="instagramLink"
+                   target="_blank"
+                   rel="noopener"
+                   class="social-btn">
+
+                    <i class="fa-brands fa-instagram"></i>
+
+                    Instagram
+
+                </a>
+
+                <a href="#"
+                   id="whatsappLink"
+                   target="_blank"
+                   rel="noopener"
+                   class="social-btn">
+
+                    <i class="fa-brands fa-whatsapp"></i>
+
+                    WhatsApp
+
+                </a>
+
+            </div>
+
+            <button type="button"
+                    class="btn btn-outline"
+                    id="anotherBtn">
+
+                Share Another Feedback
+
+            </button>
+
+        </div>
+
+        <!-- ==========================================
+                    ERROR CARD
+        =========================================== -->
+
+        <div class="feedback-card error-card"
+             id="errorCard"
+             hidden>
+
+            <p class="eyebrow">
+                Something spilled
+            </p>
+
+            <h2 class="feedback-title">
+                We couldn't send that.
+            </h2>
+
+            <p class="feedback-sub">
+                Check your connection and try again —
+                nothing you wrote was lost.
+            </p>
+
+            <button type="button"
+                    class="btn btn-cta"
+                    id="retryBtn">
+
+                Try Again
+
+            </button>
+
+        </div>
+
+    </section>
+
+    <!-- ==========================================
+            FLOATING LIVE REVIEWS (NEW)
+    =========================================== -->
+
+    <div id="floatingReviews"
+         aria-hidden="true">
+
+        <!-- JavaScript will generate
+             iPhone-style notification cards here -->
+
     </div>
+
 </main>
 
-<!-- ═══════════════════════════════════════════════════
-     LOADING OVERLAY
-     ═══════════════════════════════════════════════════ -->
+<!-- ==========================================
+            LOADING OVERLAY
+=========================================== -->
 
-<div class="loading-overlay hidden" id="loadingOverlay" aria-hidden="true">
-    <div class="loading-spinner">
-        <div class="spinner"></div>
-        <p class="loading-text">Sending your feedback...</p>
-    </div>
+<div class="loading-overlay"
+     id="loadingOverlay"
+     hidden
+     aria-hidden="true">
+
+    <div class="spinner"></div>
+
+    <p>
+        Sending your feedback…
+    </p>
+
 </div>
 
-<!-- ═══════════════════════════════════════════════════
-     TOAST NOTIFICATION
-     ═══════════════════════════════════════════════════ -->
+<!-- Toast -->
 
-<div class="toast" id="toast" role="status" aria-live="polite" aria-atomic="true"></div>
+<div class="toast"
+     id="toast"
+     role="status"
+     aria-live="polite">
+</div>
 
-<!-- ═══════════════════════════════════════════════════
-     FOOTER
-     ═══════════════════════════════════════════════════ -->
+<!-- ==========================================
+                FOOTER
+=========================================== -->
 
-<footer class="footer" role="contentinfo">
-    <div class="container">
-        <p class="footer-text">© 2026 Fouji Beat Coffee &nbsp;·&nbsp; Made with ❤️ in Ambala, India</p>
+<footer class="footer">
+
+    <img src="assets/logo-light.png"
+         alt="Fouji Beat Coffee"
+         class="footer-logo">
+
+    <p class="footer-address">
+
+        Shukal Kund Road,
+        Nadi Mohalla,
+
+        Ambala City – 134003
+
+    </p>
+
+    <div class="footer-buttons">
+
+        <a href="https://wa.me/919896772868"
+           target="_blank"
+           class="footer-btn whatsapp">
+
+            <i class="fa-brands fa-whatsapp"></i>
+
+            <span>WhatsApp</span>
+
+        </a>
+
+        <a href="https://www.instagram.com/fouji_beat_coffee_/"
+           target="_blank"
+           class="footer-btn instagram">
+
+            <i class="fa-brands fa-instagram"></i>
+
+            <span>Instagram</span>
+
+        </a>
+
+        <a href="mailto:foujibeatcoffee@gmail.com"
+           class="footer-btn email">
+
+            <i class="fa-solid fa-envelope"></i>
+
+            <span>Email</span>
+
+        </a>
+
+        <a href="assets/catalogue.pdf"
+           target="_blank"
+           class="footer-btn catalogue">
+
+            <i class="fa-solid fa-book-open"></i>
+
+            <span>Catalogue</span>
+
+        </a>
+
     </div>
-</footer>
 
-<!-- ═══════════════════════════════════════════════════
-     SCRIPTS
-     ═══════════════════════════════════════════════════ -->
+    <p class="footer-since">
+
+        Since 2000
+
+    </p>
+
+</footer>
 
 <script src="script.js"></script>
 
 </body>
+
 </html>
